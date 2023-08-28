@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Code Copy",
+    "version": "1.0",
+    "description": "Adds a copy button to tests on University of Canterbury's programming quizzes.",
+    "icons": {
+        "16": "images/icon-16.png",
+        "32": "images/icon-32.png",
+        "64": "images/icon-64.png",
+        "128": "images/icon-128.png"
+    },
+    "content_scripts": [
+        {
+            "js": ["scripts/content.js"],
+            "matches": [
+                "https://quiz2023.csse.canterbury.ac.nz/mod/quiz/*",
+                "https://learn.canterbury.ac.nz/mod/quiz/*"
+            ]
+        }
+    ]
+}
