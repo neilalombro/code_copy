@@ -3,6 +3,7 @@ const INITIAL_BUTTON_STYLE = {
     fontFamily: "Arial, sans-serif",
     padding: "5px 10px",
     backgroundColor: "#ced4da",
+    color: "#000000",
     border: "none",
     borderRadius: "5px",
     cursor: "pointer",
@@ -42,6 +43,7 @@ function createButtonsInCells(testCells, standbyText, completedText) {
 
         copyButton.addEventListener("click", function(event) {
             event.preventDefault();
+            copyButton.disabled = true;
 
             navigator.clipboard.writeText(content).then(() => {
                 const originalButtonText = copyButton.textContent;
@@ -50,6 +52,7 @@ function createButtonsInCells(testCells, standbyText, completedText) {
                 setTimeout(function() {
                     copyButton.textContent = originalButtonText;
                     copyButton.style.backgroundColor = INITIAL_BUTTON_STYLE.backgroundColor;
+                    copyButton.disabled = false;
                 }, 800);
             }).catch(err => {
                 console.error("Error copying test to clipboard:", err);
@@ -61,6 +64,27 @@ function createButtonsInCells(testCells, standbyText, completedText) {
         cell.appendChild(breakParagraph);
         cell.appendChild(copyButton);
     });
+}
+
+// TODO replace Line 80 my_function() with test_calls
+// TODO replace Line 83 expected_output with expected output as multiline
+function pythonUnitTestText(test_calls, expected_output) {
+    let code = 
+        "import unittest\n" +
+        "from unittest.mock import patch\n" +
+        "import io\n" +
+        "\n" +
+        "class TestMyFunction(unittest.TestCase):\n" +
+        "    def test_my_function_output(self):\n" +
+        "        with patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:\n" +
+        "            my_function()\n" +
+        "            actual_output = mock_stdout.getvalue()\n" +
+        "\n" +
+        "        expected_output = 'Hello, World!\n'\n" +
+        "        self.assertEqual(actual_output, expected_output)\n" +
+        "\n" +
+        "if __name__ == '__main__':\n" +
+        "    unittest.main()\n"
 }
 
 /**
