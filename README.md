@@ -1,9 +1,16 @@
 # Code Copy
-This small project was built to combat the annoyances of copying and pasting test code given in the programming quizzes that are part of University of Canterbury's quizzes.
+This small project was built to combat the annoyances of copying and pasting test code given in the programming quizzes that are part of University of Canterbury's quizzes. This was made with plain JavaScript.
 
 The codebase is an extension usable with the Google Chrome browser.
 
 Note: This extension only works for quizzes made by the University of Canterbury. The javascript is only injected to specific sites that these quizzes are run on.
+
+## Table of Contents
+
+- [Purpose](#purpose)
+- [How to Use](#how-to-use)
+- [Installation](#installation)
+- [Contact](#contact)
 
 ## Purpose
 With tutoring an introduction to programming course, I saw the struggle my students had with copying and pasting each and every test given to check if the code they created worked as expected.
@@ -31,4 +38,5 @@ Note: Future developments are looking into developing a smart Python test functi
 4. Select the "Load unpacked" and use your system's location selector to select the extension's location.
 ![Choosing the extension's location](screenshots/installation_choosing.png)
 
-## Help and Feedback
+## Contact
+Please send [nalombrodev@gmail.com](mailto:nalombrodev@gmail.com) an email with any feedback on this small-scale project.

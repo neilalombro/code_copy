@@ -66,27 +66,6 @@ function createButtonsInCells(testCells, standbyText, completedText) {
     });
 }
 
-// TODO replace Line 80 my_function() with test_calls
-// TODO replace Line 83 expected_output with expected output as multiline
-function pythonUnitTestText(test_calls, expected_output) {
-    let code = 
-        "import unittest\n" +
-        "from unittest.mock import patch\n" +
-        "import io\n" +
-        "\n" +
-        "class TestMyFunction(unittest.TestCase):\n" +
-        "    def test_my_function_output(self):\n" +
-        "        with patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:\n" +
-        "            my_function()\n" +
-        "            actual_output = mock_stdout.getvalue()\n" +
-        "\n" +
-        "        expected_output = 'Hello, World!\n'\n" +
-        "        self.assertEqual(actual_output, expected_output)\n" +
-        "\n" +
-        "if __name__ == '__main__':\n" +
-        "    unittest.main()\n"
-}
-
 /**
  * Main function that checks if there are tables within the html that have Code Runner Examples.
  * If so, then iterate through each table and add buttons into the first column (tests)
